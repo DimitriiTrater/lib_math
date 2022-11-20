@@ -71,9 +71,44 @@ bool vector_geom::operator != (const vector_geom& other)
     }
 }
 
-vector_geom vector_geom::operator + ()
+vector_geom vector_geom::operator + (const vector_geom& other)
 {
+    vector_geom result(0, 0, 0);
+    if (this->on_space == 3 && other.on_space == 3) {
+        result.x = this->x + other.x;
+        result.y = this->y + other.y;
+        result.z = this->z + other.z;
+        return result;
+    }
 
+    if (this->on_space == 2 && other.on_space == 2) {
+        vector_geom result(0, 0);
+        result.x = this->x + other.x;
+        result.y = this->y + other.y;
+        return result;
+    }
+    errPlane();
+    return result;
+}
+
+vector_geom vector_geom::operator - (const vector_geom& other)
+{
+    vector_geom result(0, 0, 0);
+    if (this->on_space == 3 && other.on_space == 3) {
+        result.x = this->x - other.x;
+        result.y = this->y - other.y;
+        result.z = this->z - other.z;
+        return result;
+    }
+
+    if (this->on_space == 2 && other.on_space == 2) {
+        vector_geom result(0, 0);
+        result.x = this->x - other.x;
+        result.y = this->y - other.y;
+        return result;
+    }
+    errPlane();
+    return result;
 }
 
 //methods
@@ -101,11 +136,15 @@ double vector_geom::len()
 
 void vector_geom::getCoordinates()
 {
-    if (this->on_space == 3)
+    if (this->on_space == 3) { 
         std::cout << this->x << " " << this->y << " " << this->z << std::endl;
         return;
-    if (this->on_space == 2)
+    }
+
+    if (this->on_space == 2) {
         std::cout << this->x << " " << this->y << std::endl;
         return;
+    }
+
     errPlane();
 }
