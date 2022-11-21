@@ -142,6 +142,37 @@ vector_geom & vector_geom::operator ++(int value)
     return temp;
 }
 
+
+vector_geom & vector_geom::operator --()
+{
+    if (this->on_space == 3) {
+        this->x--;
+        this->y--;
+        this->z--;
+        return *this;
+    }
+    this->x--;
+    this->y--;
+    return *this;
+}
+
+vector_geom & vector_geom::operator --(int value)
+{
+    vector_geom temp(*this);
+
+    if (this->on_space == 3) {
+        this->x--;
+        this->y--;
+        this->z--;
+        return temp;
+    }
+
+    this->x--;
+    this->y--;
+    
+    return temp;
+}
+
 //methods
 void vector_geom::setCoordinates(double x, double y)
 {

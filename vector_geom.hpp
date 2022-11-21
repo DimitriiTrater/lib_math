@@ -21,7 +21,8 @@ public:
     vector_geom operator - (const vector_geom& other);
     vector_geom& operator ++ ();
     vector_geom& operator ++ (int value);
-
+    vector_geom& operator -- ();
+    vector_geom& operator -- (int value);
 
 
 
