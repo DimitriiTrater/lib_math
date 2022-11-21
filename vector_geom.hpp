@@ -19,6 +19,10 @@ public:
     bool operator != (const vector_geom& other);
     vector_geom operator + (const vector_geom& other);
     vector_geom operator - (const vector_geom& other);
+    vector_geom& operator ++ ();
+    vector_geom& operator ++ (int value);
+
+
 
 
     void setCoordinates(double x, double y);
