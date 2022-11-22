@@ -9,8 +9,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 
 add_executable(
-    math_lib           main.cpp
-    vector2D.cpp     vector2D.hpp
-    vector3D.cpp     vector3D.hpp
-    errors.cpp          errors.hpp
+    math_lib                  main.cpp
+
+    errors.cpp                errors.hpp
+    
+    Vector2D/vector2D.cpp     Vector2D/vector2D.hpp
+    Vector3D/vector3D.cpp     Vector3D/vector3D.hpp
 )

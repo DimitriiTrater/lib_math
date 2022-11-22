@@ -99,5 +99,4 @@ double Vector2D::len()
 void Vector2D::getCoordinates()
 {
     std::cout << this->x << " " << this->y << std::endl;
-    return;
 }
