@@ -16,10 +16,20 @@ public:
     void operator = (const Vector2D& other);
     bool operator == (const Vector2D& other);    
     bool operator != (const Vector2D& other);
+
     Vector2D operator + (const Vector2D& other);
+    Vector2D operator + (double value);
+    
     Vector2D operator - (const Vector2D& other);
+    Vector2D operator - (double value);
+    
+    // Vector2D operator * (const Vector2D& other);
+    // Vector2D operator * (double value);
+    
+
     Vector2D& operator ++ ();
     Vector2D& operator ++ (int value);
+    
     Vector2D& operator -- ();
     Vector2D& operator -- (int value);
 

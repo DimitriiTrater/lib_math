@@ -41,11 +41,27 @@ Vector2D Vector2D::operator + (const Vector2D& other)
     return result;
 }
 
+Vector2D Vector2D::operator + (double value)
+{
+    Vector2D result(0, 0);
+    result.x = this->x + value;;
+    result.y = this->y + value;
+    return result;
+}
+
 Vector2D Vector2D::operator - (const Vector2D& other)
 {
     Vector2D result(0, 0);
     result.x = this->x - other.x;
     result.y = this->y - other.y;
+    return result;
+}
+
+Vector2D Vector2D::operator - (double value)
+{
+    Vector2D result(0, 0);
+    result.x = this->x - value;
+    result.y = this->y - value;
     return result;
 }
 
