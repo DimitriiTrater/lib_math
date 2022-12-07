@@ -15,7 +15,5 @@ int main(int argc, char* argv[])
     Point2D A(5, 5);
     Point2D B(6, 6);
     Vector2D AB(A, B);
-    AB++;
-    AB.getCoordinates();
     return 0;
 }

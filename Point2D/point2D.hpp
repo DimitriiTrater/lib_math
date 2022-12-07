@@ -11,6 +11,10 @@ public:
     Point2D();
     Point2D(double x, double y);
 
+    Point2D operator + (const Point2D& other);
+    Point2D operator - (const Point2D& other);
+    
+    
     double getX();
     double getY();
 };

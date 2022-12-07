@@ -13,6 +13,25 @@ Point2D::Point2D(double x, double y)
     this->y = y;
 }
 
+
+Point2D Point2D::operator + (const Point2D& other)
+{
+    Point2D result(0, 0);
+    result.x = this->x + other.x;
+    result.y = this->y + other.y;
+    return result;
+}
+
+Point2D Point2D::operator - (const Point2D& other)
+{
+    Point2D result(0, 0);
+    result.x = this->x - other.x;
+    result.y = this->y - other.y;
+    return result;
+}
+
+
+
 double Point2D::getX()
 {
     return this->x;
