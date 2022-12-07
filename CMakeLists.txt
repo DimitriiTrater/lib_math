@@ -13,8 +13,8 @@ add_executable(
 
     errors.cpp                errors.hpp
     
+    Point2D/point2D.cpp       Point2D/point2D.hpp
+
     Vector2D/vector2D.cpp     Vector2D/vector2D.hpp
     Vector3D/vector3D.cpp     Vector3D/vector3D.hpp
-
-    Point2D/point2D.cpp       Point2D/point2D.hpp
 )

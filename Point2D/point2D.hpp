@@ -1,5 +1,5 @@
-#ifndef POINT_2D
-#define POINT_2D
+#ifndef POINT_2D_HPP
+#define POINT_2D_HPP
 
 class Point2D
 {
@@ -10,6 +10,9 @@ private:
 public:
     Point2D();
     Point2D(double x, double y);
+
+    double getX();
+    double getY();
 };
 
 #endif

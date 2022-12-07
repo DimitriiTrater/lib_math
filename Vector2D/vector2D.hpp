@@ -1,5 +1,6 @@
-#ifndef VECTOR_2D
-#define VECTOR_2D
+#ifndef VECTOR_2D_HPP
+#define VECTOR_2D_HPP
+#include "../Point2D/point2D.hpp"
 
 // 2D Vector header file
 
@@ -12,6 +13,7 @@ private:
 public:
     Vector2D();
     Vector2D(double x, double y);
+    Vector2D(Point2D A, Point2D B);
     
     void operator = (const Vector2D& other);
     bool operator == (const Vector2D& other);    

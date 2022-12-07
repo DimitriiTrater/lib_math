@@ -2,17 +2,24 @@
 #include <cmath>
 #include "vector2D.hpp"
 
+
 // constructors
+Vector2D::Vector2D()
+{
+    this->x = 0;
+    this->y = 0;
+}
+
 Vector2D::Vector2D(double x, double y)
 {
     this->x = x;
     this->y = y;
 }
 
-Vector2D::Vector2D()
+Vector2D::Vector2D(Point2D A, Point2D B)
 {
-    this->x = 0;
-    this->y = 0;
+    this->x = B.getX() - A.getX();
+    this->y = B.getY() - A.getY();
 }
 
 
@@ -75,7 +82,7 @@ Vector2D & Vector2D::operator ++()
 
 Vector2D & Vector2D::operator ++(int value)
 {
-    Vector2D temp(*this);
+    Vector2D& temp(*this);
 
     this->x++;
     this->y++;
@@ -92,7 +99,7 @@ Vector2D & Vector2D::operator --()
 
 Vector2D & Vector2D::operator --(int value)
 {
-    Vector2D temp(*this);
+    Vector2D& temp(*this);
 
     this->x--;
     this->y--;
