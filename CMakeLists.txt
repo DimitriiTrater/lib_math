@@ -18,4 +18,6 @@ add_executable(
 
     Vector2D/vector2D.cpp     Vector2D/vector2D.hpp
     Vector3D/vector3D.cpp     Vector3D/vector3D.hpp
+    
+    Matrix/matrix.cpp         Matrix/matrix.hpp
 )
