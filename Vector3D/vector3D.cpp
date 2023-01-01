@@ -111,7 +111,7 @@ double Vector3D::len()
     return sqrt(this->x * this->x + this->y * this->y + this->z * this->z);     
 }
 
-void Vector3D::getCoordinates()
+void Vector3D::printCoordinates()
 {
     std::cout << this->x << " " << this->y << " " << this->z << std::endl;
 }

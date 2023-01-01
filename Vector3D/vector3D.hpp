@@ -24,7 +24,7 @@ public:
 
     void setCoordinates(double x, double y, double z);
 
-    void getCoordinates();
+    void printCoordinates();
 
     double len();
 
