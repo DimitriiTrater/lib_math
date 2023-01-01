@@ -119,7 +119,7 @@ double Vector2D::len()
     return sqrt(this->x * this->x + this->y * this->y);
 }
 
-void Vector2D::getCoordinates()
+void Vector2D::printCoordinates()
 {
     std::cout << this->x << " " << this->y << std::endl;
 }

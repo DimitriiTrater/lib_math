@@ -39,7 +39,7 @@ public:
 
     void setCoordinates(double x, double y);
 
-    void getCoordinates();
+    void printCoordinates();
 
     double len();
 
