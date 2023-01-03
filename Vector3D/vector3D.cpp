@@ -5,12 +5,8 @@
 
 namespace ml {
 // constructors
-Vector3D::Vector3D(double x, double y, double z)
-{
-    this->x = x;
-    this->y = y;
-    this->z = z;
-}
+
+
 
 Vector3D::Vector3D()
 {
@@ -19,6 +15,21 @@ Vector3D::Vector3D()
     this->z = 0;
 
 }
+Vector3D::Vector3D(double x, double y, double z)
+{
+    this->x = x;
+    this->y = y;
+    this->z = z;
+}
+
+Vector3D::Vector3D(Point3D A, Point3D B)
+{
+    this->x = B.getX() - A.getX();
+    this->y = B.getY() - A.getY();
+    this->z = B.getZ() - A.getZ();
+
+}
+
 
 
 // operators
@@ -71,7 +82,7 @@ Vector3D & Vector3D::operator ++()
 
 Vector3D & Vector3D::operator ++(int value)
 {
-    Vector3D temp(*this);
+    Vector3D& temp(*this);
 
     this->x++;
     this->y++;
@@ -90,7 +101,7 @@ Vector3D & Vector3D::operator --()
 
 Vector3D & Vector3D::operator --(int value)
 {
-    Vector3D temp(*this);
+    Vector3D& temp(*this);
 
     this->x--;
     this->y--;

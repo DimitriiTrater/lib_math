@@ -1,3 +1,4 @@
+#include "../Point3D/point3D.hpp"
 #ifndef VECTOR_3D_HPP
 #define VECTOR_3D_HPP
 
@@ -12,6 +13,8 @@ private:
 public:
     Vector3D();
     Vector3D(double x, double y, double z);
+    Vector3D(Point3D A, Point3D B);
+
     
     void operator = (const Vector3D& other);
     bool operator == (const Vector3D& other);    

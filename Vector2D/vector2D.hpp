@@ -1,6 +1,7 @@
+#include "../Point2D/point2D.hpp"
 #ifndef VECTOR_2D_HPP
 #define VECTOR_2D_HPP
-#include "../Point2D/point2D.hpp"
+
 
 // 2D Vector header file
 
