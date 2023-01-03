@@ -4,18 +4,20 @@
 // matrix header file
 
 namespace ml {
-class matrix
+class Matrix
 {
 private:
-    int rowsSize;
-    int columnsSize;
-    double** rows;
+    unsigned rows_;
+    unsigned cols_;
+    double* data_;
+
 public:
-    matrix(int rowsSize, int columnsSize);
-    matrix(const matrix& other);
+    Matrix(unsigned rows, unsigned cols);
+    Matrix(const Matrix& other);
 
+    ~Matrix();
 
-    ~matrix();
+    double& operator()(unsigned row, unsigned col);
 };
 
 }
