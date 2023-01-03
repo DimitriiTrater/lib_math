@@ -5,9 +5,6 @@
 
 namespace ml {
 // constructors
-
-
-
 Vector3D::Vector3D()
 {
     this->x = 0;
@@ -29,7 +26,6 @@ Vector3D::Vector3D(Point3D A, Point3D B)
     this->z = B.getZ() - A.getZ();
 
 }
-
 
 
 // operators
