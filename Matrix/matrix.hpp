@@ -1,13 +1,22 @@
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 
+// matrix header file
+
+namespace ml {
 class matrix
 {
 private:
-    /* data */
+    int rowsSize;
+    int columnsSize;
+    double** rows;
 public:
-    matrix(/* args */);
+    matrix(int rowsSize, int columnsSize);
+    matrix(const matrix& other);
+
+
     ~matrix();
 };
 
+}
 #endif /* MATRIX_HPP */
