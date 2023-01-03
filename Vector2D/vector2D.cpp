@@ -2,7 +2,7 @@
 #include <cmath>
 #include "vector2D.hpp"
 
-
+namespace ml {
 // constructors
 Vector2D::Vector2D()
 {
@@ -122,4 +122,6 @@ double Vector2D::len()
 void Vector2D::printCoordinates()
 {
     std::cout << this->x << " " << this->y << std::endl;
+}
+
 }

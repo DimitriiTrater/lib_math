@@ -4,6 +4,7 @@
 
 // 2D Vector header file
 
+namespace ml {
 class Vector2D
 {
 private:
@@ -45,6 +46,6 @@ public:
 
 
 };
-
+}
 
 #endif

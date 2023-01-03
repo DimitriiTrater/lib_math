@@ -1,6 +1,8 @@
 #include "point2D.hpp"
 
+//Pint2D source file
 
+namespace ml {
 Point2D::Point2D()
 {
     this->x = 0;
@@ -40,4 +42,5 @@ double Point2D::getX()
 double Point2D::getY()
 {
     return this->y;
+}
 }

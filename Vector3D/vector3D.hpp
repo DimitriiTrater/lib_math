@@ -1,6 +1,7 @@
 #ifndef VECTOR_3D_HPP
 #define VECTOR_3D_HPP
 
+namespace ml {
 class Vector3D
 {
 private:
@@ -29,6 +30,6 @@ public:
     double len();
 
 };
-
+}
 
 #endif

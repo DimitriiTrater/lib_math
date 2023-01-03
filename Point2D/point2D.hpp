@@ -1,6 +1,9 @@
 #ifndef POINT_2D_HPP
 #define POINT_2D_HPP
 
+//Point2D header file
+
+namespace ml {
 class Point2D
 {
 private:
@@ -18,6 +21,6 @@ public:
     double getX();
     double getY();
 };
-
+}
 #endif
 

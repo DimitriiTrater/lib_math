@@ -1,6 +1,9 @@
 #ifndef POINT_3D_HPP
 #define POINT_3D_HPP
 
+// Point3D header file
+
+namespace ml {
 class Point3D
 {
 private:
@@ -21,6 +24,6 @@ public:
     double getZ();
 
 };
-
+}
 #endif
 

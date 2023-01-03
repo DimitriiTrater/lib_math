@@ -2,8 +2,9 @@
 #include <cmath>
 #include "vector3D.hpp"
 
-// constructors
 
+namespace ml {
+// constructors
 Vector3D::Vector3D(double x, double y, double z)
 {
     this->x = x;
@@ -114,4 +115,5 @@ double Vector3D::len()
 void Vector3D::printCoordinates()
 {
     std::cout << this->x << " " << this->y << " " << this->z << std::endl;
+}
 }

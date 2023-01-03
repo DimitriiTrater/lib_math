@@ -1,6 +1,7 @@
 #include "point3D.hpp"
 
-
+// Point3D source file
+namespace ml {
 Point3D::Point3D()
 {
     this->x = 0;
@@ -44,4 +45,5 @@ double Point3D::getY()
 double Point3D::getZ()
 {
     return this->z;
+}
 }
