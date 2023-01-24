@@ -13,8 +13,5 @@ int main(int argc, char* argv[])
 {
     ml::Matrix m(10, 10);
     foo(m);
-    
-    //m(5, 8) = 156;
-    //std::cout << m(1, 1);
     return 0;
 }

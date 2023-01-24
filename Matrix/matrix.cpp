@@ -28,8 +28,10 @@ Matrix::~Matrix()
 
 void Matrix::operator = (const Matrix& other){}
 
+
 double& Matrix::operator()(unsigned row, unsigned col)
 {
     return data_[cols_*row + col];
 }
+
 }
