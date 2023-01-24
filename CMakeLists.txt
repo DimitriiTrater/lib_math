@@ -40,6 +40,7 @@ add_library(
 
     src/calc.cpp         include/lib_math/calc.hpp
 )
+
 add_library(lib_math::lib_math ALIAS lib_math)
 
 include(GenerateExportHeader)
@@ -99,6 +100,62 @@ set_target_properties(lib_math PROPERTIES
     VERSION ${PROJECT_VERSION})
 
 target_link_libraries(${APE_EXE} lib_math)
+
+if(LIB_MATH_INSTALL AND NOT CMAKE_SKIP_INSTALL_RULES)
+    configure_package_config_file(cmake/lib_math-config.cmake.in lib_math-config.cmake
+        INSTALL_DESTINATION "${LIB_MATH_INSTALL_CMAKEDIR}")
+
+    write_basic_package_version_file(lib_math-config-version.cmake
+        COMPATIBILITY SameMajorVersion)
+
+    install(TARGETS lib_math EXPORT lib_math_export
+        RUNTIME COMPONENT lib_math
+        LIBRARY COMPONENT lib_math NAMELINK_COMPONENT lib_math-dev
+        ARCHIVE COMPONENT lib_math-dev
+        INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDE_DIR}")
+    install(DIRECTORY include/
+        TYPE INCLUDE
+        COMPONENT lib_math-dev)
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/include/lib_math/${export_file_name}"
+        COMPONENT lib_math-dev
+        DESTINATION "${CMAKE_INSTALL_INCLUDE_DIR}/lib_math")
+
+    set(targets_file "lib_math-static-targets.cmake")
+
+    install(EXPORT lib_math_export
+        COMPONENT lib_math-dev
+        FILE "${targets_file}"
+        DESTINATION "${LIB_MATH_INSTALL_CMAKEDIR}"
+        NAMESPACE lib_math::)
+
+    install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/lib_math-config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/lib_math-config-version.cmake"
+        COMPONENT lib_math-dev
+        DESTINATION "${LIB_MATH_INSTALL_CMAKEDIR}")
+
+    if(MSVC)
+        set(pdb_file "")
+        set(pdb_file_destination "")
+
+        if(BUILD_SHARED_LIBS)
+            set(pdb_file "$<TARGET_PDB_FILE:lib_math>")
+            set(pdb_file_destination "${CMAKE_INSTALL_BINDIR}")
+        else()
+            # TARGET_PDB_FILE does not work for pdb file generated for static library build, determining it manually
+            set(pdb_file "$<TARGET_FILE_DIR:lib_math>/$<TARGET_FILE_PREFIX:lib_math>$<TARGET_FILE_BASE_NAME:lib_math>.pdb")
+            set(pdb_file_destination "${CMAKE_INSTALL_LIBDIR}")
+        endif()
+
+        install(FILES "${pdb_file}"
+            COMPONENT lib_math-dev
+            CONFIGURATIONS Debug RelWithDebInfo
+            DESTINATION "${pdb_file_destination}"
+            OPTIONAL)
+    endif()
+endif()
+
+
 
 #----------------------------------------------------------------
 # other target 

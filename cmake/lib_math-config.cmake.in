@@ -1,0 +1,24 @@
+@PACKAGE_INIT@
+
+macro(import_targets type)
+    if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/lib_math-${type}-targets.cmake")
+        set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE "lib_math ${type} libraries were requested but not found")
+        set(${CMAKE_FIND_PACKAGE_NAME}_FOUND OFF)
+        return()
+    endif()
+
+    include("${CMAKE_CURRENT_LIST_DIR}/lib_math-${type}-targets.cmake")
+endmacro()
+
+if(NOT TARGET lib_math::lib_math)
+    set(type "")
+
+    if(DEFINED LIB_MATH_STATIC_DEFINE)
+        set(type "static")
+    elseif(EXISTS "${CMAKE_CURRENT_LIST_DIR}/lib_math-static-targets.cmake")
+        set(type "static")
+
+    import_targets(${type})
+    check_required_components(lib_math)
+    message("-- Found ${type} lib_math (version ${${CMAKE_FIND_PACKAGE_NAME}_VERSION})")
+endif()
