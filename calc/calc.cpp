@@ -1,5 +1,6 @@
 #include "calc.hpp"
-
+namespace ml 
+{
 double multiplicationAndDivision(std::string &expression)
 {
     double result = prefixAndBracket(expression);
@@ -140,4 +141,5 @@ double calc(std::string ex)
         expression.erase(0, 1);
     
     return result;
+}
 }

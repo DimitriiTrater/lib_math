@@ -6,6 +6,6 @@
 
 int main(int argc, char* argv[])
 {
-    std::cout << calc("(2+2)*2");
+    std::cout << ml::calc("(2+2)*2");
     return 0;
 }
