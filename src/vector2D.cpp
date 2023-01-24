@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "vector2D.hpp"
+#include <lib_math/vector2D.hpp>
 
 namespace ml {
 // constructors

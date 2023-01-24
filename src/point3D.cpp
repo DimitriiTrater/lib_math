@@ -1,4 +1,4 @@
-#include "point3D.hpp"
+#include <lib_math/point3D.hpp>
 
 // Point3D source file
 namespace ml {

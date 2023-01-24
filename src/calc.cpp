@@ -1,4 +1,4 @@
-#include "calc.hpp"
+#include <lib_math\calc.hpp>
 namespace ml 
 {
 double multiplicationAndDivision(std::string &expression)

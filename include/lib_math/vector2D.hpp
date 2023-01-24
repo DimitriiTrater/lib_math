@@ -1,4 +1,4 @@
-#include "../Point2D/point2D.hpp"
+#include <lib_math/point2D.hpp>
 #ifndef VECTOR_2D_HPP
 #define VECTOR_2D_HPP
 

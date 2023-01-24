@@ -1,4 +1,4 @@
-#include "../Point3D/point3D.hpp"
+#include <lib_math/point3D.hpp>
 #ifndef VECTOR_3D_HPP
 #define VECTOR_3D_HPP
 
