@@ -17,9 +17,10 @@ public:
 
     ~Matrix();
 
-    void operator = (const Matrix& other);
-    
+    // Matrix& operator = (const Matrix& other);
     double& operator()(unsigned row, unsigned col);
+    double  operator()(unsigned row, unsigned col) const;
+
 };
 
 }

@@ -4,14 +4,13 @@
 #include "Matrix/matrix.hpp"
 #include <iostream>
 
-void foo(ml::Matrix m_inf)
-{
-    m_inf(5,5) = 145;
-}
 
 int main(int argc, char* argv[])
 {
-    ml::Matrix m(10, 10);
-    foo(m);
+    ml::Matrix m(1, 1);
+    m(0, 0) = 5;
+    ml::Matrix m_t(m);
+    
+    std::cout << m_t(0, 0);
     return 0;
 }
