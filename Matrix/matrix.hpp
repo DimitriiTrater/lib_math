@@ -1,6 +1,8 @@
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 
+// todo: add support for different objects in MATRIX
+
 // matrix header file
 
 namespace ml {
